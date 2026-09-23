@@ -160,7 +160,7 @@ Os nomes são sugestões; deve-se preservar a organização que melhor se encaix
 
 ## 9. Divisão de tarefas em ordem progressiva
 
-### Tarefa 1. Inspecionar a base existente
+### Tarefa 1. Inspecionar a base existente [concluída]
 
 - Ler `src/App.tsx`, `src/index.css` e `src/main.tsx`.
 - Confirmar como o Tailwind está sendo aplicado.
@@ -168,6 +168,8 @@ Os nomes são sugestões; deve-se preservar a organização que melhor se encaix
 - Preservar configurações existentes que não sejam necessárias para o chat.
 
 **Concluído quando:** a implementação tiver um ponto de entrada definido e não houver necessidade de alterar a configuração do Vite ou do Tailwind.
+
+**Status:** concluída. `src/main.tsx` monta `App`, `src/App.tsx` é o ponto de entrada da interface, `src/index.css` importa o Tailwind e `vite.config.ts` já configura os plugins do React e do Tailwind.
 
 ### Tarefa 2. Criar os tipos do domínio
 
