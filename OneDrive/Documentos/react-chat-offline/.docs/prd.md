@@ -182,7 +182,7 @@ Os nomes são sugestões; deve-se preservar a organização que melhor se encaix
 
 **Status:** concluída. Os tipos `MessageSender` e `ChatMessage` foram criados e exportados em `src/types/chat.ts` usando apenas declarações `type`.
 
-### Tarefa 3. Montar a estrutura visual da janela
+### Tarefa 3. Montar a estrutura visual da janela [concluída]
 
 - Criar o layout principal do chat.
 - Aplicar o fundo marrom claro.
@@ -191,6 +191,8 @@ Os nomes são sugestões; deve-se preservar a organização que melhor se encaix
 - Definir comportamento responsivo e áreas de rolagem.
 
 **Concluído quando:** a tela vazia tiver a estrutura correta em desktop e mobile, ainda sem depender do envio de mensagens.
+
+**Status:** concluída. O `App` agora possui o layout responsivo do chat, com fundo marrom claro, container `max-w-2xl`, área flexível para o histórico e card inferior reservado para o compositor.
 
 ### Tarefa 4. Implementar o histórico de mensagens
 
