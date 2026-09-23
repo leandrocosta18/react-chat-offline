@@ -171,7 +171,7 @@ Os nomes são sugestões; deve-se preservar a organização que melhor se encaix
 
 **Status:** concluída. `src/main.tsx` monta `App`, `src/App.tsx` é o ponto de entrada da interface, `src/index.css` importa o Tailwind e `vite.config.ts` já configura os plugins do React e do Tailwind.
 
-### Tarefa 2. Criar os tipos do domínio
+### Tarefa 2. Criar os tipos do domínio [concluída]
 
 - Criar a pasta `src/types` caso ainda não exista.
 - Definir o tipo do remetente com os valores de usuário e robô.
@@ -179,6 +179,8 @@ Os nomes são sugestões; deve-se preservar a organização que melhor se encaix
 - Usar apenas declarações `type`.
 
 **Concluído quando:** o estado do chat puder ser tipado sem `any` nem `interface`.
+
+**Status:** concluída. Os tipos `MessageSender` e `ChatMessage` foram criados e exportados em `src/types/chat.ts` usando apenas declarações `type`.
 
 ### Tarefa 3. Montar a estrutura visual da janela
 
