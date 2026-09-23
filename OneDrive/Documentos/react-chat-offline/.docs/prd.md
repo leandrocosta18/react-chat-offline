@@ -194,7 +194,7 @@ Os nomes são sugestões; deve-se preservar a organização que melhor se encaix
 
 **Status:** concluída. O `App` agora possui o layout responsivo do chat, com fundo marrom claro, container `max-w-2xl`, área flexível para o histórico e card inferior reservado para o compositor.
 
-### Tarefa 4. Implementar o histórico de mensagens
+### Tarefa 4. Implementar o histórico de mensagens [concluída]
 
 - Criar o estado do histórico como array no componente controlador.
 - Renderizar estado vazio quando não houver mensagens.
@@ -205,6 +205,8 @@ Os nomes são sugestões; deve-se preservar a organização que melhor se encaix
 - Implementar rolagem automática ao receber uma nova mensagem.
 
 **Concluído quando:** uma lista de mensagens de exemplo puder ser renderizada corretamente e a área de histórico rolar sem mover o compositor.
+
+**Status:** concluída. O histórico tipado foi criado em `MessageHistory`, as mensagens individuais são renderizadas por `MessageBubble`, o estado inicial permanece vazio e a rolagem acompanha novas mensagens.
 
 ### Tarefa 5. Implementar o toggle de remetente
 
