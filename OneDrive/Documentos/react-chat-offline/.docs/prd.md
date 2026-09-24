@@ -208,7 +208,7 @@ Os nomes são sugestões; deve-se preservar a organização que melhor se encaix
 
 **Status:** concluída. O histórico tipado foi criado em `MessageHistory`, as mensagens individuais são renderizadas por `MessageBubble`, o estado inicial permanece vazio e a rolagem acompanha novas mensagens.
 
-### Tarefa 5. Implementar o toggle de remetente
+### Tarefa 5. Implementar o toggle de remetente [concluída]
 
 - Criar o controle com as opções `Usuário` e `Robô`.
 - Inicializar a seleção como usuário.
@@ -217,6 +217,8 @@ Os nomes são sugestões; deve-se preservar a organização que melhor se encaix
 - Atualizar o alinhamento futuro das novas mensagens de acordo com a seleção atual.
 
 **Concluído quando:** alternar o controle modificar claramente o estado visual e o remetente que será usado no próximo envio.
+
+**Status:** concluída. O estado `sender` foi adicionado em `App`, o `SenderToggle` alterna entre usuário e robô, e o card de composição recebe borda roxa quando o remetente ativo é o robô.
 
 ### Tarefa 6. Implementar o campo de composição
 
