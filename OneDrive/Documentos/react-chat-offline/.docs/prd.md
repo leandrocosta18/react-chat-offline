@@ -220,7 +220,7 @@ Os nomes são sugestões; deve-se preservar a organização que melhor se encaix
 
 **Status:** concluída. O estado `sender` foi adicionado em `App`, o `SenderToggle` alterna entre usuário e robô, e o card de composição recebe borda roxa quando o remetente ativo é o robô.
 
-### Tarefa 6. Implementar o campo de composição
+### Tarefa 6. Implementar o campo de composição [concluída]
 
 - Usar `textarea` para suportar múltiplas linhas.
 - Ajustar a altura automaticamente ao conteúdo, com limite máximo e rolagem interna quando necessário.
@@ -230,6 +230,8 @@ Os nomes são sugestões; deve-se preservar a organização que melhor se encaix
 - Exibir estados de foco e desabilitado.
 
 **Concluído quando:** o card se adapta ao texto e seus controles permanecem utilizáveis em diferentes larguras.
+
+**Status:** concluída. O `App` agora controla o texto digitado em um `textarea`, ajusta a altura conforme o conteúdo, mantém o `SenderToggle` à esquerda, deixa o botão de envio à direita e desabilita o envio quando o valor estiver vazio ou composto apenas por espaços.
 
 ### Tarefa 7. Implementar envio e atalhos de teclado
 

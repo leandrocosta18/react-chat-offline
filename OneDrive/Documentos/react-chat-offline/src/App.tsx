@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { MessageHistory } from './components/MessageHistory'
 import { SenderToggle } from './components/SenderToggle'
 import type { ChatMessage } from './types/chat'
@@ -6,8 +6,29 @@ import type { ChatMessage } from './types/chat'
 export default function App() {
   const [messages] = useState<ChatMessage[]>([])
   const [sender, setSender] = useState<'user' | 'bot'>('user')
+  const [draft, setDraft] = useState('')
+  const textareaRef = useRef<HTMLTextAreaElement>(null)
 
   const isBotSelected = sender === 'bot'
+  const canSend = draft.trim().length > 0
+
+  useEffect(() => {
+    const textarea = textareaRef.current
+
+    if (!textarea) {
+      return
+    }
+
+    textarea.style.height = 'auto'
+    textarea.style.height = `${Math.min(textarea.scrollHeight, 160)}px`
+    textarea.style.overflowY = textarea.scrollHeight > 160 ? 'auto' : 'hidden'
+  }, [draft])
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault()
+    }
+  }
 
   return (
     <main className="min-h-dvh bg-[#c8a487] px-4 py-4 sm:px-6">
@@ -21,12 +42,26 @@ export default function App() {
             isBotSelected ? 'border-violet-500 ring-2 ring-violet-200' : 'border-[#e7d8cd]',
           ].join(' ')}
         >
-          <div className="flex items-center justify-between gap-3">
-            <SenderToggle sender={sender} onChange={setSender} />
+          <div className="flex items-end gap-3">
+            <div className="flex-shrink-0">
+              <SenderToggle sender={sender} onChange={setSender} />
+            </div>
+
+            <textarea
+              ref={textareaRef}
+              value={draft}
+              onChange={(event) => setDraft(event.target.value)}
+              onKeyDown={handleKeyDown}
+              rows={1}
+              placeholder="Digite sua mensagem"
+              aria-label="Mensagem"
+              className="min-h-[44px] max-h-40 flex-1 resize-none overflow-hidden rounded-xl border border-[#e7d8cd] bg-[#fffdfb] px-3 py-2 text-sm text-[#3f2b21] outline-none placeholder:text-[#9a7c68] focus:border-[#704f3b]"
+            />
+
             <button
               type="button"
-              className="rounded-xl bg-[#704f3b] px-4 py-2 text-sm font-medium text-white disabled:cursor-not-allowed disabled:bg-[#d9c7b8]"
-              disabled
+              className="rounded-xl bg-[#704f3b] px-4 py-2 text-sm font-medium text-white transition-colors disabled:cursor-not-allowed disabled:bg-[#d9c7b8]"
+              disabled={!canSend}
             >
               Enviar
             </button>
