@@ -1,32 +1,62 @@
-# React + TypeScript + Vite
+# React Chat Offline
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Projeto de chat offline em uma única janela, com histórico em memória e seleção de remetente entre usuário e robô.
 
-Currently, two official plugins are available:
+## ✅ Funcionalidades implementadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Histórico de mensagens em memória
+- Toggle para escolher remetente: usuário ou robô
+- Campo de texto com autoajuste de altura
+- Envio por botão ou pela tecla `Enter`
+- Quebra de linha com `Shift + Enter`
+- Mensagens com texto, remetente e horário
+- Mensagens do usuário alinhadas à direita e do robô à esquerda
+- Layout responsivo centralizado em telas maiores
+- Fundo preto, card de composição simplificado e toggle com ícones
 
-## React Compiler
+## 🧱 Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
 
-## Expanding the Oxlint configuration
+## 🗂️ Estrutura principal
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```text
+src/
+  App.tsx
+  index.css
+  main.tsx
+  types/
+    chat.ts
+  components/
+    MessageBubble.tsx
+    MessageHistory.tsx
+    SenderToggle.tsx
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## ▶️ Como executar
+
+```bash
+npm install
+npm run dev
+```
+
+A aplicação ficará disponível no servidor local do Vite, normalmente em http://localhost:5173.
+
+## 🔎 Validação
+
+Os comandos a seguir foram usados para verificar o projeto:
+
+```bash
+npm run build
+npm run lint
+```
+
+## 📝 Observações
+
+- O histórico não é persistido em banco, `localStorage` ou backend.
+- Os tipos usam `type` e ficam em `src/types`.
+- Os componentes ficam separados em `src/components`.
+- A implementação segue o PRD documentado em `.docs/prd.md`.
