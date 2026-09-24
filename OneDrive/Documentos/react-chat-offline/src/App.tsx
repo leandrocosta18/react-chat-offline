@@ -4,7 +4,7 @@ import { SenderToggle } from './components/SenderToggle'
 import type { ChatMessage } from './types/chat'
 
 export default function App() {
-  const [messages] = useState<ChatMessage[]>([])
+  const [messages, setMessages] = useState<ChatMessage[]>([])
   const [sender, setSender] = useState<'user' | 'bot'>('user')
   const [draft, setDraft] = useState('')
   const textareaRef = useRef<HTMLTextAreaElement>(null)
@@ -24,14 +24,35 @@ export default function App() {
     textarea.style.overflowY = textarea.scrollHeight > 160 ? 'auto' : 'hidden'
   }, [draft])
 
+  const handleSendMessage = () => {
+    if (!canSend) {
+      return
+    }
+
+    const message: ChatMessage = {
+      id: crypto.randomUUID(),
+      text: draft.trim(),
+      sender,
+      sentAt: new Date(),
+    }
+
+    setMessages((currentMessages) => [...currentMessages, message])
+    setDraft('')
+
+    requestAnimationFrame(() => {
+      textareaRef.current?.focus()
+    })
+  }
+
   const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
     if (event.key === 'Enter' && !event.shiftKey) {
       event.preventDefault()
+      handleSendMessage()
     }
   }
 
   return (
-    <main className="min-h-dvh bg-[#c8a487] px-4 py-4 sm:px-6">
+    <main className="min-h-dvh bg-[#000000] px-4 py-4 sm:px-6">
       <div className="mx-auto flex min-h-[calc(100dvh-2rem)] max-w-2xl flex-col gap-4">
         <MessageHistory messages={messages} />
 
@@ -39,7 +60,7 @@ export default function App() {
           aria-label="Composição da mensagem"
           className={[
             'shrink-0 rounded-2xl border bg-white p-4 shadow-sm sm:p-5',
-            isBotSelected ? 'border-violet-500 ring-2 ring-violet-200' : 'border-[#e7d8cd]',
+            isBotSelected ? 'border-violet-500 ring-2 ring-violet-200' : 'border-[#e4ccba]',
           ].join(' ')}
         >
           <div className="flex items-end gap-3">
@@ -55,13 +76,14 @@ export default function App() {
               rows={1}
               placeholder="Digite sua mensagem"
               aria-label="Mensagem"
-              className="min-h-[44px] max-h-40 flex-1 resize-none overflow-hidden rounded-xl border border-[#e7d8cd] bg-[#fffdfb] px-3 py-2 text-sm text-[#3f2b21] outline-none placeholder:text-[#9a7c68] focus:border-[#704f3b]"
+              className="min-h-[44px] max-h-40 flex-1 resize-none overflow-hidden rounded-xl text-center border-[#e7d8cd] bg-[#fffdfb] px-3 py-2 text-sm text-[#3f2b21] outline-none placeholder:text-[#9a7c68] focus:border-[#704f3b]"
             />
 
             <button
               type="button"
               className="rounded-xl bg-[#704f3b] px-4 py-2 text-sm font-medium text-white transition-colors disabled:cursor-not-allowed disabled:bg-[#d9c7b8]"
               disabled={!canSend}
+              onClick={handleSendMessage}
             >
               Enviar
             </button>

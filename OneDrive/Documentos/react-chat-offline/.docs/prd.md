@@ -233,7 +233,7 @@ Os nomes são sugestões; deve-se preservar a organização que melhor se encaix
 
 **Status:** concluída. O `App` agora controla o texto digitado em um `textarea`, ajusta a altura conforme o conteúdo, mantém o `SenderToggle` à esquerda, deixa o botão de envio à direita e desabilita o envio quando o valor estiver vazio ou composto apenas por espaços.
 
-### Tarefa 7. Implementar envio e atalhos de teclado
+### Tarefa 7. Implementar envio e atalhos de teclado [concluída]
 
 - Interceptar `Enter` sem `Shift` para enviar.
 - Permitir `Shift + Enter` para quebra de linha.
@@ -244,6 +244,8 @@ Os nomes são sugestões; deve-se preservar a organização que melhor se encaix
 - Manter o foco no campo após o envio quando possível.
 
 **Concluído quando:** o envio pelo botão e pelo teclado produzir o mesmo resultado e não houver mensagens vazias no histórico.
+
+**Status:** concluída. O `App` agora monta a mensagem com `id`, `text`, `sender` e `sentAt`, envia ao clicar em `Enviar` ou ao pressionar `Enter`, preserva `Shift + Enter` para quebra de linha e limpa o campo após o envio.
 
 ### Tarefa 8. Refinar acessibilidade e responsividade
 
