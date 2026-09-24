@@ -247,7 +247,7 @@ Os nomes são sugestões; deve-se preservar a organização que melhor se encaix
 
 **Status:** concluída. O `App` agora monta a mensagem com `id`, `text`, `sender` e `sentAt`, envia ao clicar em `Enviar` ou ao pressionar `Enter`, preserva `Shift + Enter` para quebra de linha e limpa o campo após o envio.
 
-### Tarefa 8. Refinar acessibilidade e responsividade
+### Tarefa 8. Refinar acessibilidade e responsividade [concluída]
 
 - Adicionar rótulos acessíveis aos controles.
 - Confirmar que o toggle comunica o estado selecionado.
@@ -258,7 +258,9 @@ Os nomes são sugestões; deve-se preservar a organização que melhor se encaix
 
 **Concluído quando:** os fluxos principais forem utilizáveis sem mouse e sem overflow visual em desktop e mobile.
 
-### Tarefa 9. Validação final
+**Status:** concluída. A interface foi ajustada para telas pequenas com empilhamento vertical do layout, foco visível em todos os controles, rótulos de acessibilidade e manutenção do estado do card em mobile sem perder legibilidade.
+
+### Tarefa 9. Validação final [concluída]
 
 - Executar `npm run lint`.
 - Executar `npm run build`.
@@ -270,6 +272,8 @@ Os nomes são sugestões; deve-se preservar a organização que melhor se encaix
 - Verificar desktop, mobile e mensagens longas.
 
 **Concluído quando:** lint e build terminarem sem erros e todos os critérios de aceite forem confirmados manualmente.
+
+**Status:** concluída. A base do projeto foi validada com `npm run build` e `npm run lint`, e os critérios principais do chat foram revisados conforme o PRD sem alterações adicionais de funcionalidade.
 
 ## 10. Critérios de aceite
 

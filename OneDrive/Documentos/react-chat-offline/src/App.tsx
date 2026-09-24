@@ -59,12 +59,12 @@ export default function App() {
         <section
           aria-label="Composição da mensagem"
           className={[
-            'shrink-0 rounded-2xl border bg-white p-4 shadow-sm sm:p-5',
-            isBotSelected ? 'border-violet-500 ring-2 ring-violet-200' : 'border-[#e4ccba]',
+            'shrink-0 rounded-2xl bg-white p-4 shadow-sm sm:p-5',
+            isBotSelected ? 'ring-2 ring-violet-200' : '',
           ].join(' ')}
         >
-          <div className="flex items-end gap-3">
-            <div className="flex-shrink-0">
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <div className="flex-shrink-0 self-start sm:self-auto">
               <SenderToggle sender={sender} onChange={setSender} />
             </div>
 
@@ -76,12 +76,12 @@ export default function App() {
               rows={1}
               placeholder="Digite sua mensagem"
               aria-label="Mensagem"
-              className="min-h-[44px] max-h-40 flex-1 resize-none overflow-hidden rounded-xl text-center border-[#e7d8cd] bg-[#fffdfb] px-3 py-2 text-sm text-[#3f2b21] outline-none placeholder:text-[#9a7c68] focus:border-[#704f3b]"
+              className="min-h-[44px] max-h-40 w-full flex-1 resize-none overflow-hidden rounded-xl border-0 bg-[#fffdfb] px-3 py-2 text-left text-sm text-[#3f2b21] outline-none placeholder:text-[#9a7c68]"
             />
 
             <button
               type="button"
-              className="rounded-xl bg-[#704f3b] px-4 py-2 text-sm font-medium text-white transition-colors disabled:cursor-not-allowed disabled:bg-[#d9c7b8]"
+              className="rounded-xl bg-[#704f3b] px-4 py-2 text-sm font-medium text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#704f3b] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:bg-[#d9c7b8]"
               disabled={!canSend}
               onClick={handleSendMessage}
             >
