@@ -43,7 +43,7 @@ npm install
 npm run dev
 ```
 
-A aplicação ficará disponível no servidor local do Vite, normalmente em http://localhost:5173.
+A aplicação ficará disponível no servidor local do Vite, normalmente em http://localhost:5174/
 
 ## 🔎 Validação
 
