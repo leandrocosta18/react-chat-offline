@@ -17,7 +17,7 @@ export function MessageHistory({ messages }: MessageHistoryProps) {
     <section
       aria-label="Histórico da conversa"
       aria-live="polite"
-      className="min-h-0 flex-1 overflow-y-auto rounded-2xl bg-white p-4 sm:p-6"
+      className="min-h-0 flex-1 overflow-y-auto rounded-2xl bg-[#dfeeff] p-4 sm:p-6"
     >
       {messages.length === 0 ? (
         <p className="flex h-full items-center justify-center text-center text-sm text-[#704f3b]/70">

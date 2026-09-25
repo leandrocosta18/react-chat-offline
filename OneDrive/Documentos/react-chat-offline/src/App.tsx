@@ -52,7 +52,7 @@ export default function App() {
   }
 
   return (
-    <main className="min-h-dvh bg-[#000000] px-4 py-4 sm:px-6">
+    <main className="min-h-dvh bg-gradient-to-br from-[#dff6ff] via-[#cfe8ff] to-[#a8d5ff] px-4 py-4 sm:px-6">
       <div className="mx-auto flex min-h-[calc(100dvh-2rem)] max-w-2xl flex-col gap-4">
         <MessageHistory messages={messages} />
 
@@ -76,12 +76,12 @@ export default function App() {
               rows={1}
               placeholder="Digite sua mensagem"
               aria-label="Mensagem"
-              className="min-h-[44px] max-h-40 w-full flex-1 resize-none overflow-hidden rounded-xl border-0 bg-[#fffdfb] px-3 py-2 text-left text-sm text-[#3f2b21] outline-none placeholder:text-[#9a7c68]"
+              className="min-h-[44px] max-h-40 w-full flex-1 resize-none overflow-hidden rounded-xl border-0 bg-[#edf7ff] px-3 py-2 text-left text-sm text-[#1f3d5d] outline-none placeholder:text-[#6d8ca8]"
             />
 
             <button
               type="button"
-              className="rounded-xl bg-[#704f3b] px-4 py-2 text-sm font-medium text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#704f3b] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:bg-[#d9c7b8]"
+              className="rounded-xl bg-[#2d5d9f] px-4 py-2 text-sm font-medium text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2d5d9f] focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:bg-[#b8cae2]"
               disabled={!canSend}
               onClick={handleSendMessage}
             >
